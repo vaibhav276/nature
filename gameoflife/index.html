@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <input name="cellSize" id="cellSize" type="text" value="" placeholder="Cell Size" />
+        <input name="boardWidth" id="boardWidth" type="text" value="" placeholder="Board Width" />
+        <input name="boardHeight" id="boardHeight" type="text" value="" placeholder="Board Height" />
+        <button id="reset">Reset</button>
+        <br/>
+        <br/>
+        <button id="step">Step</button>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <!--
+        <input name="x" id="x" type="text" value=""/>
+        <input name="y" id="y" type="text" value=""/>
+        <button id="log">Log</button>
+        -->
+        <br/>
+        <br/>
+        <p>
+            Click a cell to toggle it
+        </p>
+        <div id="viz"><svg id="svg"></svg></div>
+        <div>
+            Step count: <span id="stepCount"></span>
+        </div>
+    </body>
+    <script src="http://mbostock.github.com/d3/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./index.js"></script>
+</html>
