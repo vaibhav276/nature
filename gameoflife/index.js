@@ -83,7 +83,6 @@ $(function() {
    });
 
    $('#start').click(() => {
-      console.log("interval", interval);
       if (interval == undefined) {
          interval = setInterval(function() {
             let newBoard = step(config, board);
@@ -94,7 +93,6 @@ $(function() {
    });
 
    $('#stop').click(() => {
-      console.log("interval", interval);
       if (interval != undefined) {
          clearInterval(interval);
          interval = undefined;
