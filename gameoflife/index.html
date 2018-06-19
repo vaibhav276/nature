@@ -3,31 +3,55 @@
     <head>
     </head>
     <body>
-        <input name="cellSize" id="cellSize" type="text" value="" placeholder="Cell Size" />
-        <input name="boardWidth" id="boardWidth" type="text" value="" placeholder="Board Width" />
-        <input name="boardHeight" id="boardHeight" type="text" value="" placeholder="Board Height" />
-        <button id="reset">Reset</button>
-        <br/>
-        <br/>
-        <button id="step">Step</button>
-        <button id="start">Start</button>
-        <button id="stop">Stop</button>
+        <div class="ui container">
+            <br/>
+            <h1 class="ui header"><span id ="title">Game of Life</span></h1>
+            <p><a href="http://www.math.com/students/wonders/life/life.html" target="_blank">More info</a>
+            </p>
+            <br/>
+        </div>
+        <div class="ui one column grid container">
+            <div class="column">
+                <form action="" class="ui form">
+                    <h4 class="ui dividing header">Configuration</h4>
+                    <div class="three wide field">
+                        <label>Cell size</label>
+                        <input id="cellSize" maxlength="16" placeholder="Pixels" value="10" type="text">
+                    </div>
+                    <div class="field">
+                        <label>Board Size</label>
+                        <div class="two fields">
+                            <div class="three wide field">
+                                <input id="boardWidth" maxlength="16" placeholder="Pixels" value="500" type="text">
+                            </div>
+                            <i class="arrows alternate icon"></i>
+                            <div class="three wide field">
+                                <input id="boardHeight" maxlength="16" placeholder="Pixels" value="200" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="ui labeled icon button" id="reset"><i class="redo icon"></i>Reset</button>
+                </form>
+                <h4 class="ui dividing header">Output</h4>
+                <button class="ui labeled icon button" id="step"><i class="step forward icon"></i> Step</button>
+                <button class="ui labeled icon button" id="start"><i class="play icon"></i> Play</button>
+                <button class="ui labeled icon button" id="stop"><i class="pause icon"></i> Pause</button>
+                <h4>Click a cell to toggle it</h4>
+                <div id="viz"><svg id="svg"></svg></div>
+                <div>
+                    Step count: <span id="stepCount"></span>
+                </div>
+            </div>
+        </div>
         <!--
         <input name="x" id="x" type="text" value=""/>
         <input name="y" id="y" type="text" value=""/>
         <button id="log">Log</button>
         -->
-        <br/>
-        <br/>
-        <p>
-            Click a cell to toggle it
-        </p>
-        <div id="viz"><svg id="svg"></svg></div>
-        <div>
-            Step count: <span id="stepCount"></span>
-        </div>
     </body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
     <script src="./index.js"></script>
 </html>

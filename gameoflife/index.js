@@ -1,10 +1,12 @@
 $(function() {
+   $('form').submit(false);
+
    let config = {
       cellSize: 10,
       boardWidth: 500,
       boardHeight: 200,
-      colorDead: '#f9efa4',
-      colorLife: '#000000'
+      colorDead: '#e6ecf7',
+      colorLife: '#4286f4'
    };
 
    function getRandomInt(max) {
@@ -66,8 +68,10 @@ $(function() {
 
       board = initBoard(config);
       rect = initDisplay(config, board);
-      clearInterval(interval);
-      interval = undefined;
+      if (interval != undefined) {
+         clearInterval(interval);
+         interval = undefined;
+      }
       initRectHandlers();
       stepCount = 0;
    });
@@ -79,15 +83,22 @@ $(function() {
    });
 
    $('#start').click(() => {
-      interval = setInterval(function() {
-         let newBoard = step(config, board);
-         rect = updateDisplay(config, newBoard, rect);
-         board = newBoard;
-      }, 100);
+      console.log("interval", interval);
+      if (interval == undefined) {
+         interval = setInterval(function() {
+            let newBoard = step(config, board);
+            rect = updateDisplay(config, newBoard, rect);
+            board = newBoard;
+         }, 100);
+      }
    });
 
    $('#stop').click(() => {
-      clearInterval(interval);
+      console.log("interval", interval);
+      if (interval != undefined) {
+         clearInterval(interval);
+         interval = undefined;
+      }
    });
 
    function initRectHandlers() {
